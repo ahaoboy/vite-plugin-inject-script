@@ -14,6 +14,7 @@ const banner = (script: string): any => {
     configResolved(resolvedConfig: ResolvedConfig) {
       viteConfig = resolvedConfig;
     },
+    //@ts-ignore
     async writeBundle(options: any, bundle: any) {
       for (const file of Object.entries(bundle)) {
         // 获取文件路径
