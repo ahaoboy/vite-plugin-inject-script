@@ -1,3 +1,21 @@
+## install
+```
+pnpm i vite-plugin-inject-script
+```
+vite.config
+```
+import { defineConfig } from "vite";
+import vue from "@vitejs/plugin-vue";
+import inject from "vite-plugin-inject-script";
+const s = `
+console.log("${new Date().toLocaleString()}");
+`;
+// https://vitejs.dev/config/
+export default defineConfig({
+  plugins: [vue(), inject(s)],
+});
+```
+
 # TSDX Bootstrap
 
 This project was bootstrapped with [TSDX](https://github.com/jaredpalmer/tsdx).
